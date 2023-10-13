@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <form action="/searchInput" method="get">
+        <input type="text" name="q" placeholder="Search products...">
+        <button type="submit">Search</button>
+      </form>
+      
+    <h1>Search Results</h1>
+    <ul>
+        <% products.forEach(product => { %>
+            <li>
+                <h2><%= product.name %></h2>
+                <p>Category: <%= product.category %></p>
+                <p>Price: $<%= product.price %></p>
+                <p>Availability: <%= product.availability ? 'In Stock' : 'Out of Stock' %></p>
+            </li>
+        <% }); %>
+    </ul>
+
+    
+</body>
+</html>
